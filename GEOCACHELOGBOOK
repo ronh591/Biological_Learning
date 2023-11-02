@@ -1,0 +1,69 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+int getSize(string array[], int arraySize) {
+  // Count the number of array positions that do not hold the value "empty"
+  int count = 0;
+  for (int i = 0; i < arraySize; i++) {
+    if (array[i] != "empty") {
+      count++;
+    }
+  }
+
+  // If there are no positions that contain the string "empty", then the array is full
+  if (count == arraySize) {
+    cout << "original can of beans destroyed by a lawn mower" << endl;
+    return -1;
+  }
+
+  return count;
+}
+void addUsername(string array[], int arraySize, string username) {
+  // Add the username to the array in the arraySize position
+  array[arraySize] = username;
+}
+void displayUsernames(string array[], int arraySize) {
+  // Display all usernames in the array
+  cout << "Usernames in the array:" << endl;
+  for (int i = 0; i < arraySize; i++) {
+    if (array[i] != "empty") {
+      cout << array[i] << endl;
+    }
+  }
+}
+int main() {
+  // Ask the user for their username
+  string username;
+  cout << "Enter your username: ";
+  cin >> username;
+
+  // Create an array of size 10 and fill each position with the string "empty"
+  string array[10];
+  for (int i = 0; i < 10; i++) {
+    array[i] = "empty";
+  }
+
+  // Ask the user to identify the item found
+  string item;
+  cout << "Enter the item found: ";
+  cin >> item;
+
+  // If the item is equal to "original can of beans", call the getSize function and store the return value in a variable called arraySize
+  int arraySize;
+  if (item == "original can of beans") {
+    arraySize = getSize(array, 10);
+  } else {
+    arraySize = -1;
+  }
+
+  // If the arraySize variable is not -1, call the addUsername function and pass the array, the arraySize variable, and username variable as arguments
+  if (arraySize != -1) {
+    addUsername(array, arraySize, username);
+  }
+
+  // Display all usernames in the array
+  displayUsernames(array, arraySize);
+
+  return 0;
+}
