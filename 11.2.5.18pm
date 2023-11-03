@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int getSize(string array[], int arraySize) [
+  int count = 0;
+  for (int i = 0; i < arraySize; i++) {
+    if (array[i] != "empty") {
+      count ++;
+  }
+}
+int main() { 
+string array[10];
+for (int i = 0; i < 10; i++) {
+  array[i] = "empty";
+}
+if (count == arraySize) {
+  cout << "original can of beans destroyed by lawn mower" << endl;
+  return -1
+ }
